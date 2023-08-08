@@ -1,0 +1,147 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Website of Balázs Sági, a product-minded web developer from Hungary."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+    --site-bg-color: #005369;
+    --site-text-color: #d7bbd1;
+    --site-text-color-accent: #9ed6d6;
+    --site-font-family: "David Libre", serif;
+
+    --spacing-1: 1rem;
+    --spacing-2: 1.5rem;
+    --spacing-3: 2rem;
+    --spacing-4: 2rem;
+    --spacing-4: 2.5rem;
+    --spacing-6: 3rem;
+    --spacing-7: 4rem;
+    --spacing-8: 5rem;
+
+    --font-size-xxl: 3rem;
+    --font-size-xl: 2.5rem;
+    --font-size-l: 2rem;
+    --font-size-m: 1.5rem;
+    --font-size-s: 1.25rem;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--site-bg-color);
+    color: var(--site-text-color);
+    font-family: var(--site-font-family);
+  }
+
+  @media (max-width: 800px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    font-size: var(--font-size-m);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .u-stack-1 > * + * {
+    margin-top: var(--spacing-1);
+  }
+  .u-stack-2 > * + * {
+    margin-top: var(--spacing-2);
+  }
+  .u-stack-3 > * + * {
+    margin-top: var(--spacing-3);
+  }
+  .u-stack-4 > * + * {
+    margin-top: var(--spacing-4);
+  }
+  .u-stack-5 > * + * {
+    margin-top: var(--spacing-5);
+  }
+  .u-stack-6 > * + * {
+    margin-top: var(--spacing-6);
+  }
+  .u-stack-7 > * + * {
+    margin-top: var(--spacing-7);
+  }
+  .u-stack-8 > * + * {
+    margin-top: var(--spacing-8);
+  }
+
+  .u-highlight {
+    color: var(--site-text-color-accent);
+    font-weight: 800;
+  }
+
+  ::selection {
+    background: #5d557a;
+  }
+</style>

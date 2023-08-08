@@ -1,0 +1,27 @@
+---
+import Divider from "../media/Divider.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="root u-stack-2">
+  <slot name="divider">
+    <Divider />
+  </slot>
+  <h2>{title}</h2>
+  <slot />
+</section>
+
+<style>
+  h2 {
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+  .root :global(> svg) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

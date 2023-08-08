@@ -1,0 +1,78 @@
+---
+import Divider2 from "../media/Divider2.astro";
+import Section from "./Section.astro";
+
+const items = [
+  {
+    title: "Fullstack Developer",
+    company: "Logiscool Ltd.",
+    from: "Dec 2017",
+    to: "Aug 2023",
+    description: `I was responsible for the frontend
+      architecture of a social media platform where kids learning to code can
+      share their projects with each other. I also took part in designing and
+      implementing the backend services.`,
+  },
+  {
+    title: "Frontend Developer",
+    company: "ikontent",
+    from: "Sep 2017",
+    to: "Dec 2017",
+    description: `I worked on web projects for clients like Rádió 1 and HWSW. My main focus was sitebuilding with
+HTML and SCSS.`,
+  },
+  {
+    title: "Frontend Developer",
+    company: "Lampyon",
+    from: "Jun 2016",
+    to: "Aug 2017",
+    description: `I was responsible for sitebuilding news and promotional websites and landing pages using HTML,
+SCSS, PHP and some JavaScript.
+`,
+  },
+];
+---
+
+<Section title="My Work Experience">
+  <Divider2 slot="divider" />
+  <div class="items u-stack-4">
+    {
+      items.map((item) => (
+        <div class="item">
+          <div>
+            <h3 class="u-highlight">{item.title}</h3>
+            <p>{item.company}</p>
+            <p class="date">
+              {item.from} – {item.to}
+            </p>
+          </div>
+          <p>{item.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</Section>
+
+<style>
+  h3 {
+    font-size: var(--font-size-l);
+    line-height: 1.2;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: var(--spacing-4);
+    text-align: left;
+  }
+
+  .date {
+    font-size: var(--font-size-s);
+  }
+
+  @media (max-width: 1024px) {
+    .item {
+      display: block;
+    }
+  }
+</style>
